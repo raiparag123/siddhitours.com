@@ -1,0 +1,38 @@
+4/28/2021 3:15:49 AM ==> 
+Exception Message:TinifyAPI.ConnectionException: Error while connecting: Cannot access a disposed object.
+Object name: 'System.Net.Http.ByteArrayContent'. ---> System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Http.ByteArrayContent'.
+   at System.Net.Http.HttpContent.CheckDisposed()
+   at System.Net.Http.HttpContent.CopyToAsync(Stream stream, TransportContext context)
+   at System.Net.Http.HttpClientHandler.GetRequestStreamCallback(IAsyncResult ar)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsync>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at TinifyAPI.Client.<Request>d__11.MoveNext()
+   --- End of inner exception stack trace ---
+   at TinifyAPI.Client.<Request>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at TinifyAPI.Source.<FromBuffer>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at TinifyAPI.Source.<FromFile>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at TinifyAPI.SourceTaskExtensions.<Resize>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at TinifyAPI.SourceTaskExtensions.<ToFile>d__4.MoveNext()
+Source:mscorlib
+Stack Trace:   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at ItenaryImage.ProcessRequest(HttpContext context) in g:\pleskvhosts\fourlance.com\siddhitours.com\AdminPages\ItenaryImage.ashx:line 61

@@ -1,0 +1,303 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="FrontEndPages_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Siddhi Tours</title>
+
+    <!-- Bootstrap Core CSS -->
+  
+
+    <!-- Custom CSS -->
+   
+	
+    <link href="../FrontEndContent/css/bootstrap.min.css" rel="stylesheet" />
+     <link href="../FrontEndContent/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="../FrontEndContent/css/owl.carousel.min.css" rel="stylesheet" />
+	<link href="../FrontEndContent/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link rel="Stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/redmond/jquery-ui.css" /> 
+    <link href="../FrontEndContent/css/main.css" rel="stylesheet" />
+
+    <script src="../FrontEndContent/js/jquery.js"></script>
+    <script src="../FrontEndContent/js/owl.carousel.min.js"></script>
+	<%--<script src="../FrontEndContent/js/bootstrap.min.js"></script>--%>
+      
+    <script src="../FrontEndContent/js/MasterPage.js"></script>
+   
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form  runat="server">
+      <!-- Navigation -->
+        <asp:HiddenField ID="currValue" runat="server" />
+    <nav class="navbar navbar-default navbar-fixed-top affix"  id="nav" role="navigation"  data-spy="affix" >
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../default.aspx"><img src="../img/logo.png" class="main-logo"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+					<li><a href="../default.aspx">Home</a></li>
+					<li class="dropdown">
+					  <a href="trip.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tours <span class="caret"></span></a>
+					  <ul class="dropdown-menu" id="category">
+						
+					  </ul>
+					</li>
+					<li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="BusinessTour.aspx">Business Tours</a></li>
+						<li><a href="visa.aspx">Visa</a></li>
+						<li><a href="rent.aspx">Rent-a-car</a></li>
+                        
+					  </ul>
+					</li>
+                      <li><a href="CruiseList.aspx">Cruise</a></li>
+					<li><a href="AboutUs.aspx">About Us</a></li>
+					<li><a href="ContactUs.aspx">Contact Us</a></li>
+                    
+				</ul>
+                 <%--<form class="navbar-form navbar-left">--%>
+        <div class="form-group navbar-form navbar-left hidden-xs hidden-md  hidden-sm">
+        <input type="search" class="form-control search-Loc" placeholder="Search Tour" id="search" />
+            <button type="submit" value="Search" id="btnsearch" class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
+        </div>
+        
+      <%--</form>--%>
+				<ul class="nav navbar-nav navbar-right hidden-xs hidden-md  hidden-sm">
+                    <%-- <li><input type="radio" name="currency" value="INR"> INR<br></li>
+  <li><input type="radio" name="currency" value="DOLLAR"> DOLLAR<br></li>
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram"></i></a></li>--%>
+                    <li>
+						<div class="switch">
+						  <input type="radio" class="switch-input" name="currency" value="INR" id="week" checked>
+						  <label for="week" class="switch-label switch-label-off"><i class="fa fa-inr"></i></label>
+						  <input type="radio" class="switch-input" name="currency" value="DOLLAR" id="month">
+						  <label for="month" class="switch-label switch-label-on"><i class="fa fa-dollar"></i></label>
+						  <span class="switch-selection"></span>
+						</div>
+					</li>
+				</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+        <!-- Change11 -->
+	<div id="slider" style="right:-342px;">
+		<div id="sidebar" onclick="open_panel();">
+			<img src="img/contact.png"/>
+		</div>
+		<div id="header">
+					
+              <asp:HiddenField ID="HiddenField2" runat="server" />
+			  <input type="text" name="cpname" id="name" placeholder="Name:" required>
+			  <input type="email" name="cpemail" id="email" placeholder="Email:" required>
+			  <input type="tel" name="cpphone" id="phone" onkeypress="return isNumber(event)" maxlength="10" placeholder="Phone:" required>
+			  <textarea name="cpmessage" id="message" placeholder="Message:" required></textarea>
+			  <input type="submit" id="submit" value="Send message">
+		</div>
+	</div>
+	<!-- Change11 Ends -->
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+           	<div class="container">
+		<%--<div class="row">
+			<div class="nb-form text-center">
+			<p class="title"><i class="fa fa-comment"></i> Send us your query</p>
+			<p class="message">Did not find what you are looking for ? Let us help you make your trip.</p>
+			
+              <asp:HiddenField ID="HiddenField1" runat="server" />
+			  <input type="text" name="cpname" placeholder="Name:" required>
+			  <input type="email" name="cpemail" placeholder="Email:" required>
+			  <input type="tel" name="cpphone" placeholder="Phone:" required>
+			  <textarea name="cpmessage" placeholder="Message:" required></textarea>
+			  <input type="submit" value="Send message">
+		
+			</div>
+		</div>--%>
+	</div>
+
+   <section id="search-footer" class="search-footer hidden-lg">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-sm-8">
+					<input type="search" class="form-control ui-autocomplete-input search-Loc" placeholder="Search Tour" id="search"  role="textbox" aria-autocomplete="list" aria-haspopup="true">
+				</div>
+				<div class="col-xs-6 col-sm-4">
+					<li>
+						<div class="switch">
+						  <input type="radio" class="switch-input" name="currency" value="INR" id="week" checked="checked">
+						  <label for="week" class="switch-label switch-label-off"><i class="fa fa-inr"></i></label>
+						  <input type="radio" class="switch-input" name="currency" value="DOLLAR" id="month">
+						  <label for="month" class="switch-label switch-label-on"><i class="fa fa-dollar"></i></label>
+						  <span class="switch-selection"></span>
+						</div>
+					</li>
+				</div>
+			</div>
+		</div>
+	</section>
+           <footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<h3>Sitemap</h3>
+					<h4><a href="aboutus.aspx">About Us</a></h4>
+					<h4><a href="Trip.aspx">Tours</a></h4>
+					
+					<h4><a href="ContactUs.aspx">Contact Us</a></h4>
+					<h4><a href="Trip.aspx">Popular Destination</a></h4>
+				</div>
+				<div class="col-sm-4 text-center">
+					<h3>Other Links</h3>
+					
+					<%--<h4><a href="Trip.aspx?CategoryId=1">Group Tour</a></h4>--%>
+					<h4><a href="visa.aspx">Visa</a></h4>
+					<h4><a href="BusinessTour.aspx">B2B Trips</a></h4>
+					<h4><a href="rent.aspx">Rent A Car</a></h4>
+					<h4><a href="CruiseList.aspx">Cruise</a></h4>
+				</div>
+				<div class="col-sm-4 text-center">
+					<h3>Stay Connected</h3>
+					<h4><i class="fa fa-envelope"></i> <span id="FooteremailId"></span> </h4>
+					<h4><i id="Footerwhats1" class="fa fa-phone"></i> <span id="Footermob1"></span></h4>
+					<h4><i id="Footerwhats2" class="fa fa-phone"></i> <span id="Footermob2"></span></h4>
+					<br>
+					<ul class="social">
+                        <li> <a id="fb" href="#"> <i class="fa fa-facebook">  </i> </a> </li>
+                      <%--  <li> <a href="#"> <i class="fa fa-twitter">  </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-google-plus">  </i> </a> </li>--%>
+                        <li> <a id="insta" href="#"> <i class="fa fa-instagram">  </i> </a> </li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h4>Copyright &copy 2018 Siddhi Tours, All Rights Reserved | Designed & Developed by <a href="http://fourlance.in/" target="_blank" style="color:#03a9f4">Fourlance</a></h4>
+				</div>
+			</div>
+		</div>
+    </footer>
+       
+    
+    </form>
+</body>
+    <!-- jQuery -->
+
+    <!-- Bootstrap Core JavaScript -->
+ 
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 4000 //changes the speed
+        })
+        var owl = $('.owl-carousel');
+
+        //owl.owlCarousel({
+        //    center: true,
+        //    loop: true,
+        //    margin: 10,
+        //    responsive: {
+        //        600: {
+        //            items: 4
+        //        }
+        //    }
+        //});
+        //$('.next').click(function () {
+        //    owl.trigger('next.owl.carousel');
+        //})
+        //$('.prev').click(function () {
+        //    owl.trigger('prev.owl.carousel');
+        //})
+
+        /*
+    ------------------------------------------------------------
+    Function to activate form button to open the slider.
+    ------------------------------------------------------------
+    */
+        function open_panel() {
+            slideIt();
+            var a = document.getElementById("sidebar");
+            a.setAttribute("id", "sidebar1");
+            a.setAttribute("onclick", "close_panel()");
+        }
+        /*
+        ------------------------------------------------------------
+        Function to slide the sidebar form (open form)
+        ------------------------------------------------------------
+        */
+        function slideIt() {
+            var slidingDiv = document.getElementById("slider");
+            var stopPosition = 0;
+            if (parseInt(slidingDiv.style.right) < stopPosition) {
+                slidingDiv.style.right = parseInt(slidingDiv.style.right) + 2 + "px";
+                setTimeout(slideIt, 1);
+            }
+        }
+        /*
+        ------------------------------------------------------------
+        Function to activate form button to close the slider.
+        ------------------------------------------------------------
+        */
+        function close_panel() {
+            slideIn();
+            a = document.getElementById("sidebar1");
+            a.setAttribute("id", "sidebar");
+            a.setAttribute("onclick", "open_panel()");
+        }
+        /*
+        ------------------------------------------------------------
+        Function to slide the sidebar form (slide in form)
+        ------------------------------------------------------------
+        */
+        function slideIn() {
+            var slidingDiv = document.getElementById("slider");
+           var w = window.innerWidth;
+   
+    if(w <= 768){
+		 var stopPosition = -260;
+	}
+	else{
+		 var stopPosition = -342;
+	}
+            if (parseInt(slidingDiv.style.right) > stopPosition) {
+                slidingDiv.style.right = parseInt(slidingDiv.style.right) - 2 + "px";
+                setTimeout(slideIn, 1);
+            }
+        }
+
+        $(document).ready(function(){ 
+    var w = window.innerWidth;
+	if(w <= 768){
+		$('#slider').css('right' , '-260px');
+	}
+	else{
+		$('#slider').css('right' , '-342px');
+	}
+	});
+   
+    </script>
+</html>

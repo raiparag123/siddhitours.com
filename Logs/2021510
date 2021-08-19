@@ -1,0 +1,18 @@
+5/10/2021 2:06:38 AM ==> 
+Exception Message:The process cannot access the file 'G:\PleskVhosts\fourlance.com\siddhitours.com\Images\AboutUs\20210510020638_12c5c69e6eb47a72b91f0e6c41e202d9.jpg' because it is being used by another process.
+Source:mscorlib
+Stack Trace:   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at AboutUsHandler.ProcessRequest(HttpContext context) in g:\pleskvhosts\fourlance.com\siddhitours.com\AdminPages\AboutUsHandler.ashx:line 35
+5/10/2021 2:06:38 AM ==> 
+Exception Message:The process cannot access the file 'G:\PleskVhosts\fourlance.com\siddhitours.com\Images\AboutUs\20210510020638_12c5c69e6eb47a72b91f0e6c41e202d9.jpg' because it is being used by another process.
+Source:mscorlib
+Stack Trace:   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at AboutUsHandler.ProcessRequest(HttpContext context) in g:\pleskvhosts\fourlance.com\siddhitours.com\AdminPages\AboutUsHandler.ashx:line 35
